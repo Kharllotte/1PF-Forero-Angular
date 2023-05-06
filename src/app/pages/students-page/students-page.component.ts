@@ -26,4 +26,13 @@ export class StudentsPageComponent {
   insertData(){
     localStorage.setItem("users", JSON.stringify(this.students));
   }
+
+  deleteStudent(item:Student){
+    this.students = this.students.filter(function(i) { return i.id !== item.id });
+    console.log(item.id)
+  }
+
+  addStudent(){
+    
+  }
 }
