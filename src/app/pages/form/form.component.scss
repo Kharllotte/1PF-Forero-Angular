@@ -1,5 +1,7 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

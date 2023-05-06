@@ -8,6 +8,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatMenuModule,
     MatSidenavModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatInputModule
     
   ],
 })
