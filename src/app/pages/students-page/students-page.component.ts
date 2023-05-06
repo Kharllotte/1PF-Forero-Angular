@@ -22,4 +22,8 @@ export class StudentsPageComponent {
     'edit',
     'delete',
   ];
+
+  insertData(){
+    localStorage.setItem("users", JSON.stringify(this.students));
+  }
 }
