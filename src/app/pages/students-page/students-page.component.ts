@@ -7,12 +7,16 @@ import { Student } from 'src/app/models/student.model';
   styleUrls: ['./students-page.component.scss'],
 })
 export class StudentsPageComponent {
-  students: Student[] = [
-    new Student(1, 'Naruto', 'Uzumaki', true),
-    new Student(2, 'Sasuke', 'Uchiha', false),
-    new Student(3, 'Sakura', 'Haruno', true),
-    new Student(4, 'Kakashi', 'Hatake', false),
-  ];
+  students: Student[] = [];
+  
+  getStudents(){
+    this.students = JSON.parse(localStorage.getItem('students') || "[]" )
+    console.log("students", this.students)
+   }
+
+  ngOnInit(): void {
+    this.getStudents();
+  }
 
   displayedColumns = [
     'id',
@@ -33,6 +37,9 @@ export class StudentsPageComponent {
   }
 
   addStudent(){
-    
+  }
+
+  getMensaje(e: any){
+    console.log(e);
   }
 }

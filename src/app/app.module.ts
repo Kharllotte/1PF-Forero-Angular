@@ -10,7 +10,7 @@ import { MyMaterialModule } from './shared/modules/my-material.module';
 import { NavbarComponent } from './shared/layout/navbar/navbar.component';
 import { FormComponent } from './pages/form/form.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +22,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     NavbarComponent,
     FormComponent
   ],
-  imports: [BrowserModule, BrowserAnimationsModule, MyMaterialModule],
+  imports: [BrowserModule, BrowserAnimationsModule, MyMaterialModule, ReactiveFormsModule,
+    FormsModule],
   providers: [{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}],
   bootstrap: [AppComponent],
 })

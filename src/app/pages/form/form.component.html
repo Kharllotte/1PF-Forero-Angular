@@ -1,19 +1,20 @@
-<div class="container-form">
-  <h1>Formulario Agregar estudiante</h1>
-  <mat-form-field appearance="fill">
-      <mat-label>	Nombre</mat-label>
-      <input matInput>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-      <mat-label>Apellido</mat-label>
-      <input matInput>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-      <mat-label>Activo</mat-label>
-      <mat-select>
-        <mat-option value="one">True</mat-option>
-        <mat-option value="two">False</mat-option>
-      </mat-select>
-  </mat-form-field>
-    <button mat-raised-button color="primary">Agregar</button>
-</div>
+<!-- (ngSubmit)="onSubmit(contactForm)" -->
+<form class="container-form" (ngSubmit)="onSubmit()" [formGroup]="formStudent">
+    <h1>Formulario Agregar estudiante</h1>
+    <mat-form-field appearance="fill">
+        <mat-label>	Nombre</mat-label>
+        <input matInput formControlName="firstname">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="lastname">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>isActivo</mat-label>
+        <mat-select formControlName="isActive">
+          <mat-option value="True">Activo</mat-option>
+          <mat-option value="False">Inactivo</mat-option>
+        </mat-select>
+    </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Agregar</button>
+</form>
