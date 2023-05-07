@@ -8,6 +8,7 @@ import { Student } from 'src/app/models/student.model';
 })
 export class StudentsPageComponent {
   students: Student[] = [];
+  studentEdit?:Student;
   
   getStudents(){
     this.students = JSON.parse(localStorage.getItem('students') || "[]" )
@@ -42,4 +43,14 @@ export class StudentsPageComponent {
   getMensaje(e: any){
     console.log(e);
   }
+
+  sendStudent(item:Student){
+    console.log(item)
+    this.studentEdit = item;
+  }
+
+  editStudent(){
+
+  }
+
 }

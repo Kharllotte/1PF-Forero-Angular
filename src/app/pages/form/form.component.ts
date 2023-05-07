@@ -10,8 +10,13 @@ import { Student } from 'src/app/models/student.model';
 export class FormComponent {
 
   @Input() students: Student[] = [];
+  @Input() set edit(value: Student){
+    console.log(value);
+  }
 
-  constructor(){  }
+
+  constructor(){
+  }
 
   formStudent = new FormGroup({
     firstname: new FormControl(),
@@ -22,16 +27,16 @@ export class FormComponent {
 
  onSubmit(){
   const student = new Student(
-    this.students.length,
+    this.students.length+1,
     this.formStudent.value.firstname,
     this.formStudent.value.lastname,
     this.formStudent.value.isActive
   );
   this.students.push(student)
   localStorage.setItem('students', JSON.stringify(this.students))
-
-  
  }
+
+
 
  
 }
