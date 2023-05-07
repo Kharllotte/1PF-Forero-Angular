@@ -1,8 +1,7 @@
-<!-- (ngSubmit)="onSubmit(contactForm)" -->
 <form class="container-form" (ngSubmit)="onSubmit()" [formGroup]="formStudent">
     <h1>Formulario Agregar estudiante</h1>
     <mat-form-field appearance="fill">
-        <mat-label>	Nombre</mat-label>
+        <mat-label>  Nombre</mat-label>
         <input matInput formControlName="firstname">
     </mat-form-field>
     <mat-form-field appearance="fill">
@@ -10,11 +9,12 @@
         <input matInput formControlName="lastname">
     </mat-form-field>
     <mat-form-field appearance="fill">
-        <mat-label>isActivo</mat-label>
+        <mat-label>Activo</mat-label>
         <mat-select formControlName="isActive">
-          <mat-option value="True">Activo</mat-option>
-          <mat-option value="False">Inactivo</mat-option>
+          <mat-option value="true">Activo</mat-option>
+          <mat-option value="false">Inactivo</mat-option>
         </mat-select>
     </mat-form-field>
-      <button mat-raised-button color="primary" type="submit">Guardar</button>
-</form>
+      <button *ngIf="!flag" mat-raised-button color="accent" type="submit">Editar</button>
+      <button *ngIf="flag" mat-raised-button color="primary" type="submit">Guardar</button>
+  </form>

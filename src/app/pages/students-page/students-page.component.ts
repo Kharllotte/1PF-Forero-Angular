@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Student } from 'src/app/models/student.model';
 
+
 @Component({
   selector: 'app-students-page',
   templateUrl: './students-page.component.html',
@@ -8,8 +9,8 @@ import { Student } from 'src/app/models/student.model';
 })
 export class StudentsPageComponent {
   students: Student[] = [];
-  studentEdit?:Student;
-  
+  editStudent: Student | null = null
+  constructor() {} 
   getStudents(){
     this.students = JSON.parse(localStorage.getItem('students') || "[]" )
     console.log("students", this.students)
@@ -28,29 +29,17 @@ export class StudentsPageComponent {
     'delete',
   ];
 
-  insertData(){
-    localStorage.setItem("users", JSON.stringify(this.students));
+  onSubmitEditStudent(student: Student){
+    this.editStudent = student
   }
 
   deleteStudent(item:Student){
     this.students = this.students.filter(function(i) { return i.id !== item.id });
-    console.log(item.id)
+    localStorage.setItem('students', JSON.stringify(this.students))
   }
 
-  addStudent(){
-  }
 
   getMensaje(e: any){
     console.log(e);
   }
-
-  sendStudent(item:Student){
-    console.log(item)
-    this.studentEdit = item;
-  }
-
-  editStudent(){
-
-  }
-
 }
